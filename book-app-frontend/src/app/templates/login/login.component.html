@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login</title>
+</head>
+<body>
+    <form (ngSubmit)="f.form.valid && signin()" #f="ngForm" method="POST" action="">
+      <h2>Signin </h2>
+        <input type="text" [(ngModel)]="model.email" #email="ngModel" name="email" type="email" placeholder="email" required="required">
+        <input type="text" [(ngModel)]="model.password" #password="ngModel" name="password" type="password" placeholder="password" required="required">
+        <button type="submit">Log In</button>
+    </form>
+    <p><a href="javascript:;" routerLink="/signup">Create an account</a></p>
+</body>
+</html>
