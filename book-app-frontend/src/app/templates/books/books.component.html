@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Signup</title>
+</head>
+<body>
+  <div class="">
+    <button *ngIf="user_type=='admin'" routerLink="/add-books">Add books</button>
+    <a href="javascript:;" (click)="logout()"></a> 
+  </div>
+  <table id="example">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>ISBN</th>
+        <th>Price</th>
+        <th colspan="2">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let book of bookList">
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td>{{ book.isbn }}</td>
+        <td>{{ book.price }}</td>
+        <td *ngIf="user_type=='admin'">
+          <a href="javascript:;" (click)="deleteBook(book._id)" aria-hidden="true"></a>
+        </td>
+        <td>
+          <a href="javascript:;" (click)="editBook(book._id)" routerLink="/edit-books/{{book._id}}" aria-hidden="true"></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html> 
