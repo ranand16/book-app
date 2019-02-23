@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Signup</title>
+</head>
+<body>
+  <div class="add-book-form">
+    <form (ngSubmit)="f.form.valid && updateBook()" #f="ngForm" method="POST" action="">
+      <h2>Add a new book</h2>
+      <div>
+        <input type="text" [(ngModel)]="model.title" #title="ngModel" name="title" type="text" placeholder="Title" required="required">
+      </div>
+      <div>
+        <input type="text" [(ngModel)]="model.author" #author="ngModel" name="author" type="text" placeholder="Author" required="required">
+      </div>
+      <div>
+        <input type="text" [(ngModel)]="model.isbn" #isbn="ngModel" name="isbn" type="text" placeholder="ISBN" required="required">
+      </div>
+      <div>
+        <input type="text" [(ngModel)]="model.price" #price="ngModel" name="price" type="text" placeholder="Author" required="required">
+      </div>
+    
+      <div>
+        <button type="submit">Save</button>
+      </div>
+    </form>
+    <p><a href="javascript:;" routerLink="/books">cancel</a></p>
+    </div>
+</body>
+</html> 
