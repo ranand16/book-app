@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 // importing lib for HTTP calls
-import { HttpClient, HttpEvent, HttpHandler, HttpInterceptor, HttpErrorResponse, HttpRequest } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
